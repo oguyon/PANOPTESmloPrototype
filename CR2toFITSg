@@ -1,0 +1,7 @@
+Cfits << EOF
+_RGBfast=1
+RGBfullres=1
+loadcr2torgb "$1" imr img imb
+savefits img "!$2"
+exit
+EOF

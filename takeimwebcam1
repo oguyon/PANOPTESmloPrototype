@@ -1,0 +1,1 @@
+fswebcam -d /dev/video1 -p YUYV -r 1600x1200 --set gain=255  --set brightness=255 im1.jpg

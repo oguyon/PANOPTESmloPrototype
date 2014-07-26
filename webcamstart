@@ -1,0 +1,2 @@
+sudo chmod a+rw /dev/video*
+nohup ./skycam startwebcamloop 4 > /dev/null &

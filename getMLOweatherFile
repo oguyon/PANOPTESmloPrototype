@@ -1,0 +1,6 @@
+wget ftp://ftp.cmdl.noaa.gov/met/MLO/mindata.txt -O /skycam/log/MLOweather.txt_tmp
+mv /skycam/log/MLOweather.txt_tmp /skycam/log/MLOweather.txt
+tail -n 1 /skycam/log/MLOweather.txt| sed 's/,/ /g' | awk '{ printf ("MLO_weather_time: %d-%02d-%02d-%02d-%02d-%02d\nMLO_WSP10m: %f\nMLO_WDIR10m: %f\nMLO_HUMIDITY: %f\nMLO_TEMP2m: %f\nMLO_TEMP10m: %f\nMLO_ATMPRESS: %f\nMLO_PREC: %f\n",$2,$3,$4,$5,$6,$7,$8,$10,$12,$14,$20,$15,$16)}' > /skycam/log/MLOweather.txt1
+
+tail -n 1 /skycam/log/MLOweather.txt| sed 's/,/ /g' | awk '{ printf ("%d %02d %02d %02d %02d %02d %f %f %f %f %f %f %f\n",$2,$3,$4,$5,$6,$7,$8,$10,$12,$14,$20,$15,$16)}' > /skycam/log/MLOweather.txt2
+

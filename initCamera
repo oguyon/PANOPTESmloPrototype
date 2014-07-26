@@ -1,0 +1,35 @@
+
+# -------------- CAMERA INITIALIZATION ROUTINES ----------------
+
+# unmount camera so that gphoto2 can use it
+gvfs-mount -u ~/.gvfs/gphoto2*
+
+# set aperture to F1.2
+/usr/local/bin/gphoto2 --set-config /main/capturesettings/aperture=1.2
+
+# set iso to 400
+# 1: iso 100
+# 2: iso 200
+# 3: iso 400
+# 4: iso 800
+# 5: iso 1600
+/usr/local/bin/gphoto2 --set-config /main/imgsettings/iso=3
+
+# set camera in bulb mode
+/usr/local/bin/gphoto2 --set-config /main/capturesettings/shutterspeed=0
+
+
+
+
+
+# NOTES:
+
+# to list settings
+# /usr/local/bin/gphoto2 --list-config
+# /usr/local/bin/gphoto2 --get-config  /main/capturesettings/shutterspeed
+
+# capture a 120s exposure
+#/usr/local/bin/gphoto2 --bulb=120.0 --capture-image-and-download
+
+
+

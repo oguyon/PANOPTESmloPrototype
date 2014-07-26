@@ -1,0 +1,7 @@
+touch /skycam/MLOweatherFile_loop_run
+nohup /skycam/soft/getMLOweatherFile_loop > /dev/null &
+nohup /skycam/skycam startwebcamloop 4 > /dev/null &
+sleep 2
+nohup /skycam/soft/skycam_mainloop &
+sleep 5
+nohup /skycam/soft/skycam_monitorloop &

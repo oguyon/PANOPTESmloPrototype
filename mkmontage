@@ -1,0 +1,18 @@
+
+dcraw -t 0 -c -h -a -k 1200 $1 | ppmtojpeg > tmpjpeg.jpeg
+cp tmpjpeg.jpeg /var/www/LastFrame.jpg
+convert -resize 20% tmpjpeg.jpeg tmpjpegs.jpeg
+cp tmpjpegs.jpeg /var/www/LastFrame_s.jpg
+
+
+
+date -u +"%Y-%m-%d" | xargs -I {} rsync --delete -au /skycamdata/{}/JPEG /var/www/Images
+date -u +"%Y-%m-%d" | xargs -I {} rsync --delete -au /skycamdata/{}/CR2 /var/www/Images
+date -u +"%Y-%m-%d" | xargs -I {} rsync --delete -au /skycamdata/{}/CR2info /var/www/Images
+date -u +"%Y-%m-%d" | xargs -I {} rsync --delete -au /skycamdata/{}/GTtable.log /var/www/Images
+
+
+#echo "Assembling montage..."
+
+#date -u +"%Y-%m-%d" | xargs -I {} montage -label '%f' /skycamdata/{}/JPEG/*.jpeg -geometry 400x240+2+2 /var/www/montage.jpg
+#convert -resize 20% /var/www/montage.jpg /var/www/montage_s.jpg

@@ -1,0 +1,1 @@
+fswebcam -d /dev/video3 -r 1600x1200 --set gain=50  --set brightness=90 im3.jpg

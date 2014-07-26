@@ -1,0 +1,1 @@
+fswebcam -d /dev/video2 -r 1600x1200 --set gain=50  --set brightness=90 im2.jpg

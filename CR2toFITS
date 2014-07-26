@@ -1,0 +1,9 @@
+dcraw -t 0 -D -4 -c $1 > imtmp.pgm
+Cfits << EOF
+readpgm imtmp.pgm im1
+imstat im1
+savefits im1 "!$2"
+quit
+EOF
+rm imtmp.pgm
+

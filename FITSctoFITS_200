@@ -1,0 +1,9 @@
+rzip -d -k $1 -o _tmp.fitsc
+Cfits << EOF
+loadfits _tmp.fitsc im
+!rm _tmp.fitsc
+dequant im imd 0.5 7.91 0.68 1024
+save_fl imd "$2"
+quit
+EOF
+

@@ -1,0 +1,12 @@
+Cfits << EOF
+cr2tofits "$1" _tmp.fits
+loadfits _tmp.fits im
+!rm _tmp.fits
+requant im imq 0.5 4.74 0.34 1024
+savefits imq "!_imq.fits"
+quit
+EOF
+rzip _imq.fits 
+mv _imq.fits.rz $1.fitsc.rz
+
+

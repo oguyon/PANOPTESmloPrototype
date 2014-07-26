@@ -1,0 +1,1 @@
+/skycam/skycam mainloop > /skycam/log/log_mainloop.txt 

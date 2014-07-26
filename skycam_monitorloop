@@ -1,0 +1,1 @@
+/skycam/skycam monitorloop > /skycam/log/log_monitor.txt 

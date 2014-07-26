@@ -1,0 +1,36 @@
+
+Cfits << EOF
+cr2tofits "$1" tmp_im.fits
+loadfits tmp_im.fits im
+imstat im fileout
+!mv imstat.info.txt imstat_tot.info.txt
+extractRGGBchan im im_r im_g1 im_g2 im_b
+imstat im_r fileout
+!mv imstat.info.txt imstat_r.info.txt
+imstat im_g1 fileout
+!mv imstat.info.txt imstat_g1.info.txt
+imstat im_g2 fileout
+!mv imstat.info.txt imstat_g2.info.txt
+imstat im_b fileout
+!mv imstat.info.txt imstat_b.info.txt
+img = im_g1+im_g2
+save_fl img "!/skycam/img.fits"
+quit
+EOF
+rm tmp_im.fits
+
+mv imstat_tot.info.txt imstat.info.txt
+awk '{printf("RED_%s\n",'\$'0)}' imstat_r.info.txt >> imstat.info.txt
+awk '{printf("GREEN1_%s\n",'\$'0)}' imstat_g1.info.txt >> imstat.info.txt
+awk '{printf("GREEN2_%s\n",'\$'0)}' imstat_g2.info.txt >> imstat.info.txt
+awk '{printf("BLUE_%s\n",'\$'0)}' imstat_b.info.txt >> imstat.info.txt
+
+dcraw -t 0 -c -h -a -k 1200 $1 | ppmtojpeg > tmpjpeg.jpeg
+cp tmpjpeg.jpeg /var/www/LastFrame.jpg
+convert -resize 20% tmpjpeg.jpeg tmpjpegs.jpeg
+cp tmpjpegs.jpeg /var/www/LastFrame_s.jpg
+
+
+
+date -u +"%Y-%m-%d" | xargs -I {} montage -label '%f' /skycamdata/{}/JPEG/*.jpeg -geometry 400x240+2+2 /var/www/montage.jpg
+convert -resize 20% /var/www/montage.jpg /var/www/montage_s.jpg

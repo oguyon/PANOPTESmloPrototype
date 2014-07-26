@@ -1,0 +1,12 @@
+fswebcam -d /dev/video$1 -p YUYV -r 1600x1200 --set gain=1 --set brightness=1% -F 1000 im$1.jpg > /skycam/log/webcam$1.log
+mv im$1.jpg /skycam/tmp/im$1a.jpg
+convert /skycam/tmp/im$1a.jpg -colorspace gray -format "%[fx:100*mean]" info: > imlevel$1.txt
+
+fswebcam -d /dev/video$1 -p YUYV -r 1600x1200 --set gain=50 --set brightness=20% -F 1000 im$1.jpg > /skycam/log/webcam$1.log
+mv im$1.jpg /skycam/tmp/im$1b.jpg
+convert /skycam/tmp/im$1b.jpg -colorspace gray -format "%[fx:100*mean]" info: >> imlevel$1.txt
+
+fswebcam -d /dev/video$1 -p YUYV -r 1600x1200 --set gain=255 --set brightness=100% -F 1000 im$1.jpg > /skycam/log/webcam$1.log
+mv im$1.jpg /skycam/tmp/im$1c.jpg
+convert /skycam/tmp/im$1c.jpg -colorspace gray -format "%[fx:100*mean]" info: >> imlevel$1.txt
+

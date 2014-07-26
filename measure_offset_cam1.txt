@@ -1,0 +1,30 @@
+#
+# measures offset between two images for CAMERA 1
+# for images 4770 x 3178
+#
+
+Cfits << EOF
+loadcr2torgb $1 im0r im0g im0b
+loadcr2torgb $2 im1r im1g im1b
+#save_fl im0g "!im0g.fits"
+#save_fl im1g "!im1g.fits"
+#loadfits im0g.fits im0g
+#loadfits im1g.fits im1g
+fcorrel im0g im1g imcg
+extractim imcg imcge 200 200 2285 1489
+#save_fl imcge "!imcge.fits"
+im=imcge-perc(imcge,0.97)
+im1=trunc(im,0.0,1.0e12)
+im2=im1/itot(im1)
+#save_fl im2 "!im2.fits"
+mkspdisk d1 200 200 100 100 30
+im3=im2*d1
+#save_fl im3 "!im3.fits"
+imstat im3
+vbx1=vbx-100
+vby1=vby-100
+writef2file xcent.txt vbx1
+writef2file ycent.txt vby1
+quit
+EOF
+

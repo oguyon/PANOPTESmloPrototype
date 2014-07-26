@@ -1,0 +1,26 @@
+EXPECTED_ARGS=2
+
+
+if [ $# -ne $EXPECTED_ARGS ]
+then
+  echo
+  echo "------ archiveCR2  ------"
+  echo "Usage:  archiveCR2 <cam> <date>"
+  echo "EXAMPLE: archiveCR2 2 2011-09-05" 
+  echo
+  exit
+fi
+
+
+ls /skycam/tmpCR2cam$1/*.CR2 | awk '{printf("mv %s /skycam/tmpCR2/tmp/IM%04ld.CR2\n",$1,NR)}' > cmd1
+chmod +x cmd1
+./cmd1
+rm cmd1
+ls /skycamdata/$2/CR2/IMG$1*.tmp | awk '{printf("mv /skycam/tmpCR2/tmp/IM%04ld.CR2 %s.CR2\n",NR,$1)}' | sed 's/.tmp.CR2/.CR2/g'> cmd2
+chmod +x cmd2
+./cmd2
+rm cmd2
+
+# cleanup
+rm /skycamdata/$2/CR2/IMG$1_*.tmp
+

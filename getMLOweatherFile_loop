@@ -1,0 +1,6 @@
+#!/bin/bash
+while [ -e "/skycam/MLOweatherFile_loop_run" ]
+do
+	/skycam/soft/getMLOweatherFile
+	sleep 30.0
+done

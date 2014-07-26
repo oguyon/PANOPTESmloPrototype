@@ -1,0 +1,6 @@
+rm /skycam/MLOweatherFile_loop_run
+touch /skycam/STOPmonitor
+sleep 5
+./skycam stopwebcamloop 4
+sleep 2
+touch /skycam/STOP

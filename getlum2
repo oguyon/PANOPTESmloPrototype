@@ -1,0 +1,1 @@
+/skycam/soft/takeimwebcam2; mv im2.jpg /skycam/tmp/im2a.jpg; convert /skycam/tmp/im2a.jpg -colorspace gray -format "%[fx:100*mean]" info:

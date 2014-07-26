@@ -1,0 +1,100 @@
+minimum                  2.232000000000000000e+03 [ pix 10670490 ]
+maximum                  1.638300000000000000e+04 [ pix 1510902 ]
+total                    9.873045035200000000e+10
+rms                      2.628420389758116752e+07
+rms per pixel            6.750853625848106276e+03
+mean                     6.512966526420503214e+03
+photocenterX             2.368868549729483220e+03
+photocenterY             1.602128698839848312e+03
+percentile01             3.155000000000000000e+03
+percentile05             3.478000000000000000e+03
+percentile10             3.702000000000000000e+03
+percentile20             4.102000000000000000e+03
+percentile50             6.998000000000000000e+03
+percentile80             7.973000000000000000e+03
+percentile90             8.465000000000000000e+03
+percentile95             8.949000000000000000e+03
+percentile99             9.405000000000000000e+03
+percentile995            9.495000000000000000e+03
+percentile998            9.589000000000000000e+03
+percentile999            9.663000000000000000e+03
+RED_minimum                  2.232000000000000000e+03 [ pix 2666430 ]
+RED_maximum                  1.638300000000000000e+04 [ pix 378621 ]
+RED_total                    1.433635287200000000e+10
+RED_rms                      7.395833763558981009e+06
+RED_rms per pixel            3.799102409450315463e+03
+RED_mean                     3.782913418642052875e+03
+RED_photocenterX             1.182219418131939619e+03
+RED_photocenterY             8.006038510140823519e+02
+RED_percentile01             2.973000000000000000e+03
+RED_percentile05             3.194000000000000000e+03
+RED_percentile10             3.324000000000000000e+03
+RED_percentile20             3.478000000000000000e+03
+RED_percentile50             3.800000000000000000e+03
+RED_percentile80             4.102000000000000000e+03
+RED_percentile90             4.216000000000000000e+03
+RED_percentile95             4.284000000000000000e+03
+RED_percentile99             4.385000000000000000e+03
+RED_percentile995            4.424000000000000000e+03
+RED_percentile998            4.495000000000000000e+03
+RED_percentile999            4.699000000000000000e+03
+GREEN1_minimum                  3.347000000000000000e+03 [ pix 3789547 ]
+GREEN1_maximum                  1.638300000000000000e+04 [ pix 378621 ]
+GREEN1_total                    2.679733776000000000e+10
+GREEN1_rms                      1.383837157272628695e+07
+GREEN1_rms per pixel            7.108514396829022189e+03
+GREEN1_mean                     7.070976105378565990e+03
+GREEN1_photocenterX             1.185151865593121556e+03
+GREEN1_photocenterY             8.001370913892977796e+02
+GREEN1_percentile01             5.372000000000000000e+03
+GREEN1_percentile05             5.821000000000000000e+03
+GREEN1_percentile10             6.092000000000000000e+03
+GREEN1_percentile20             6.417000000000000000e+03
+GREEN1_percentile50             7.116000000000000000e+03
+GREEN1_percentile80             7.759000000000000000e+03
+GREEN1_percentile90             7.994000000000000000e+03
+GREEN1_percentile95             8.133000000000000000e+03
+GREEN1_percentile99             8.316000000000000000e+03
+GREEN1_percentile995            8.379000000000000000e+03
+GREEN1_percentile998            8.482000000000000000e+03
+GREEN1_percentile999            8.773000000000000000e+03
+GREEN2_minimum                  3.198000000000000000e+03 [ pix 3622815 ]
+GREEN2_maximum                  1.638300000000000000e+04 [ pix 378620 ]
+GREEN2_total                    2.667425198600000000e+10
+GREEN2_rms                      1.377547884859009087e+07
+GREEN2_rms per pixel            7.076207572819535926e+03
+GREEN2_mean                     7.038497634022161947e+03
+GREEN2_photocenterX             1.183943941118844350e+03
+GREEN2_photocenterY             8.020292292929304949e+02
+GREEN2_percentile01             5.331000000000000000e+03
+GREEN2_percentile05             5.787000000000000000e+03
+GREEN2_percentile10             6.056000000000000000e+03
+GREEN2_percentile20             6.382000000000000000e+03
+GREEN2_percentile50             7.088000000000000000e+03
+GREEN2_percentile80             7.727000000000000000e+03
+GREEN2_percentile90             7.956000000000000000e+03
+GREEN2_percentile95             8.089000000000000000e+03
+GREEN2_percentile99             8.272000000000000000e+03
+GREEN2_percentile995            8.335000000000000000e+03
+GREEN2_percentile998            8.441000000000000000e+03
+GREEN2_percentile999            8.732000000000000000e+03
+BLUE_minimum                  3.519000000000000000e+03 [ pix 333900 ]
+BLUE_maximum                  1.638300000000000000e+04 [ pix 381005 ]
+BLUE_total                    3.092250773400000000e+10
+BLUE_rms                      1.596548377527690120e+07
+BLUE_rms per pixel            8.201172419200856893e+03
+BLUE_mean                     8.159478947639233411e+03
+BLUE_photocenterX             1.184330931137475318e+03
+BLUE_photocenterY             8.005859652748046074e+02
+BLUE_percentile01             6.182000000000000000e+03
+BLUE_percentile05             6.730000000000000000e+03
+BLUE_percentile10             7.046000000000000000e+03
+BLUE_percentile20             7.417000000000000000e+03
+BLUE_percentile50             8.213000000000000000e+03
+BLUE_percentile80             8.946000000000000000e+03
+BLUE_percentile90             9.212000000000000000e+03
+BLUE_percentile95             9.365000000000000000e+03
+BLUE_percentile99             9.557000000000000000e+03
+BLUE_percentile995            9.617000000000000000e+03
+BLUE_percentile998            9.700000000000000000e+03
+BLUE_percentile999            9.803000000000000000e+03

@@ -1,0 +1,29 @@
+# ---------------- TAKE IMAGE ----------------------
+#
+# ./takeimage <etime(sec)> <ISOmode> <filename> 
+#
+# example:
+# ./takeimage 30.0 3 IMG_0034.CR2
+#
+# ISOmode:
+# 1: iso 100
+# 2: iso 200
+# 3: iso 400
+# 4: iso 800
+# 5: iso 1600
+#
+# --------------------------------------------------
+
+
+#sleep $1
+#touch $3
+
+rm $3
+rm capt0000.cr2
+/usr/bin/gphoto2 --set-config /main/imgsettings/iso=$2
+sleep 0.1
+/usr/bin/gphoto2 --set-config /main/capturesettings/shutterspeed=0
+sleep 0.1
+/usr/bin/gphoto2 --bulb=$1 --capture-image-and-download
+mv capt0000.cr2 $3
+

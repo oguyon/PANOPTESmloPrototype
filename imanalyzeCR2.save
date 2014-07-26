@@ -1,0 +1,11 @@
+Cfits << EOF
+cr2tofits "$1" tmp_im.fits
+loadfits tmp_im.fits im
+imstat im fileout
+quit
+EOF
+rm tmp_im.fits
+
+dcraw -c -h $1 | ppmtojpeg > tmpjpeg.jpeg
+
+

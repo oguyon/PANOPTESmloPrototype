@@ -1,0 +1,1 @@
+fswebcam -d /dev/video2 -p YUYV -r 1600x1200 --set gain=$1  --set brightness=$2 --set contrast=$3 im2.jpg

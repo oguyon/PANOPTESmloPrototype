@@ -1,0 +1,43 @@
+#
+# measures offset between two images for CAMERA 1
+# for images 4770 x 3178
+#
+
+Cfits << EOF
+RGBfullres=1
+_RGBfast=1
+loadcr2torgb "$1" im0r im0g im0b
+loadcr2torgb "$2" im1r im1g im1b
+#savefits im0r "!im0r.fits"
+#savefits im0g "!im0g.fits"
+#savefits im0b "!im0b.fits"
+#savefits im1g "!im1g.fits"
+extractim im0g im0ge 1024 1024 1617 821
+extractim im1g im1ge 1024 1024 1617 821
+fcorrel im0ge im1ge imcge
+savefits imcge "!imcge.fits"
+im=imcge-perc(imcge,0.97)
+imtrunc im 0.0 1.0e12 im1
+im2=im1/itot(im1)
+savefits im2 "!im2.fits"
+mkspdisk d1 1024 1024 512 512 150
+im3=im2*d1
+#savefits d1 "!d1.fits"
+#savefits im3 "!im3.fits"
+imstats im3
+mkspdisk d2 1024 1024 vbx vby 50
+im4=im2*d2
+#savefits d2 "!d2.fits"
+#savefits im4 "!im4.fits"
+imstats im4
+mkspdisk d3 1024 1024 vbx vby 15
+im5=im3*d3
+#savefits d3 "!d3.fits"
+#savefits im5 "!im5.fits"
+imstats im5
+vbx1=vbx-512
+vby1=vby-512
+writef2file xcent.txt vbx1
+writef2file ycent.txt vby1
+quit
+EOF

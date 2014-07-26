@@ -1,0 +1,38 @@
+Cfits << EOF
+loadfits "$1" im
+bayer2rgb im imr img imb
+mkgauss flat 4770 3178 7000 1.0
+imr1=imr/flat
+img1=img/flat
+imb1=imb/flat
+save_fl img1 "!img1.fits"
+
+a=perc(imr1,0.05)
+imr2=imr1-a
+a=perc(img1,0.05)
+img2=img1-a
+a=perc(imb1,0.05)
+imb2=imb1-a
+
+a=perc(imr2,0.98)
+imr3=imr2/a
+a=perc(img2,0.98)
+img3=img2/a
+a=perc(imb2,0.98)
+imb3=imb2/a
+
+c=0.7
+d=600.0
+imr4=d*imr3^c
+img4=0.7*d*img3^c
+imb4=d*imb3^c
+
+imr4=trunc(imr4,0.0,255.0)
+img4=trunc(img4,0.0,255.0)
+imb4=trunc(imb4,0.0,255.0)
+writebmp imr4 img4 imb4 $1.bmp
+quit
+EOF
+convert $1.bmp $1.jpeg
+rm $1.bmp
+
